@@ -1,0 +1,1 @@
+export { WithoutDcView } from './view'
