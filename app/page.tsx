@@ -187,33 +187,35 @@ function LoginCard({ onLogin, onHover }: { onLogin: () => void; onHover: () => v
       </p>
 
       {/* Checkbox polityki */}
-      <label className="flex items-start gap-3 cursor-pointer text-left">
+      <div
+        className="flex items-start gap-3 cursor-pointer text-left"
+        onClick={() => setAccepted((v) => !v)}
+      >
         <div className="relative mt-1 shrink-0">
-          <input
-            type="checkbox"
-            className="sr-only"
-            checked={accepted}
-            onChange={(e) => setAccepted(e.target.checked)}
-          />
           <div
             className="w-5 h-5 mc-block flex items-center justify-center"
             style={{
               background: accepted ? "hsl(var(--mc-rose))" : "hsl(var(--input))",
               transition: "background 0.15s",
             }}
-            onClick={() => setAccepted((v) => !v)}
           >
             {accepted && <span style={{ fontSize: "14px", lineHeight: 1 }}>✓</span>}
           </div>
         </div>
         <span style={{ fontSize: "16px", fontFamily: "VT323, monospace" }}>
           Zapoznałem/am się z{" "}
-          <Link href="/privacy" className="text-mc-rose hover:brightness-125 transition underline">
+          <Link
+            href="/polityka-prywatnosci"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-mc-rose hover:brightness-125 transition underline"
+            onClick={(e) => e.stopPropagation()}
+          >
             polityką prywatności
           </Link>{" "}
           i akceptuję warunki przetwarzania danych osobowych.
         </span>
-      </label>
+      </div>
 
       <button
         onClick={onLogin}
@@ -223,7 +225,7 @@ function LoginCard({ onLogin, onHover }: { onLogin: () => void; onHover: () => v
       >
         ▶ Zaloguj przez Discord
       </button>
-      <p className="text-sm text-muted-foreground">Tylko członkowie serwera mają dostęp.</p>
+      <p className="text-sm text-muted-foreground">Tylko członkowie serwera <strong>rose.owo</strong> mają dostęp do serwera Minecraft.</p>
     </div>
   );
 }
