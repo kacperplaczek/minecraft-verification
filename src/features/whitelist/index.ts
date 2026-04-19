@@ -1,0 +1,1 @@
+export { WhitelistPageView } from './view'

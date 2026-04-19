@@ -1,14 +1,15 @@
 import { useEffect, useRef, useState } from "react"
+import { signIn } from "next-auth/react"
 import { useSession } from "next-auth/react"
 import { toast } from "sonner"
 import { useSounds } from "@/hooks/useSounds"
-import { checkMinecraftNick, addToWhitelist } from "../services/whitelist.service"
+import { checkMinecraftNick, addToWhitelist } from "./services/whitelist.service"
 import type { Step, NickStatus } from "./types"
 
-const SERVER_NAME = "rose.owo"
+export const SERVER_NAME = "rose.owo"
 
 export function useWhitelistPage() {
-  const { data: session, status } = useSession()
+  const { status } = useSession()
   const [step, setStep] = useState<Step>("login")
   const [nick, setNick] = useState("")
   const [nickStatus, setNickStatus] = useState<NickStatus>("idle")
@@ -55,7 +56,6 @@ export function useWhitelistPage() {
   }, [nick, step])
 
   const handleLogin = async () => {
-    const { signIn } = await import("next-auth/react")
     play("click")
     await signIn("discord", { callbackUrl: "/" })
   }
@@ -74,24 +74,22 @@ export function useWhitelistPage() {
     }
   }
 
+  const handleNickChange = (v: string) => {
+    if (v.length > nick.length) play("type")
+    setNick(v)
+  }
+
   const toggleSound = () => {
     setSoundOn((s) => !s)
     play("click")
   }
 
-  const handleNickChange = (v: string) => {
-    setNick(v)
-    if (v.length > nick.length) play("type")
-  }
-
   return {
-    session,
     step,
     nick,
     nickStatus,
     skinUrl,
     soundOn,
-    SERVER_NAME,
     handleLogin,
     handleSubmit,
     handleNickChange,

@@ -4,7 +4,7 @@ export async function checkMinecraftNick(nick: string) {
   )
   const data = await res.json()
   if (data?.success && data?.data?.player?.id) {
-    return { valid: true, uuid: data.data.player.id }
+    return { valid: true, uuid: data.data.player.id as string }
   }
   return { valid: false, uuid: null }
 }
