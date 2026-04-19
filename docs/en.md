@@ -39,15 +39,15 @@
 
 ## 🛠 Tech Stack
 
-| Technology                               | Version | Purpose             |
-| ---------------------------------------- | ------- | ------------------- |
-| [Next.js](https://nextjs.org)            | 15      | Fullstack framework |
-| [TypeScript](https://typescriptlang.org) | 5       | Type safety         |
-| [NextAuth.js](https://next-auth.js.org)  | 5       | Discord OAuth2 auth |
-| [Tailwind CSS](https://tailwindcss.com)  | 4       | Styling             |
-| [SQLite](https://sqlite.org)             | -       | Whitelist database  |
-| [Sonner](https://sonner.emilkowal.ski)   | -       | Toast notifications |
-| [Lucide React](https://lucide.dev)       | -       | Icons               |
+| Technology | Version | Purpose |
+|---|---|---|
+| [Next.js](https://nextjs.org) | 15 | Fullstack framework |
+| [TypeScript](https://typescriptlang.org) | 5 | Type safety |
+| [NextAuth.js](https://next-auth.js.org) | 5 | Discord OAuth2 auth |
+| [Tailwind CSS](https://tailwindcss.com) | 4 | Styling |
+| [SQLite](https://sqlite.org) | - | Whitelist database |
+| [Sonner](https://sonner.emilkowal.ski) | - | Toast notifications |
+| [Lucide React](https://lucide.dev) | - | Icons |
 
 ---
 
@@ -172,11 +172,9 @@ openssl rand -base64 32
 3. Navigate to the **OAuth2** tab
 4. Copy the **Client ID** and **Client Secret** to `.env.local`
 5. Under **Redirects**, add:
-
    ```
    http://localhost:3000/api/auth/callback/discord
    ```
-
    > In production, replace with your domain, e.g. `https://rose.owo/api/auth/callback/discord`
 
 6. Go to the **Bot** tab and copy the **Token** to `.env.local`
@@ -203,12 +201,20 @@ App available at: [http://localhost:3000](http://localhost:3000)
 
 The project uses the **MVVM (Model-View-ViewModel)** pattern combined with a **feature-based structure**.
 
-| File           | Responsibility                               |
-| -------------- | -------------------------------------------- |
-| `model.ts`     | Constants, config, API calls                 |
+| File | Responsibility |
+|---|---|
+| `model.ts` | Constants, config, API calls |
 | `viewmodel.ts` | Component state, logic, events (custom hook) |
-| `view.tsx`     | Pure UI, zero business logic                 |
-| `types.d.ts`   | TypeScript types for the feature             |
-| `index.ts`     | Public feature export                        |
+| `view.tsx` | Pure UI, zero business logic |
+| `types.d.ts` | TypeScript types for the feature |
+| `index.ts` | Public feature export |
 
 > Small components (< ~30 lines, pure UI) are kept as single `.tsx` files without MVVM splitting.
+
+---
+
+## ☕ Support the project
+
+If you like this project, consider buying me a coffee!
+
+[![Buy Me a Coffee](https://img.shields.io/badge/Buy%20Me%20a%20Coffee-ffdd00?style=for-the-badge&logo=buy-me-a-coffee&logoColor=black)](https://buymeacoffee.com/kacperplaczek)

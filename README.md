@@ -22,4 +22,12 @@
 <img src="https://img.shields.io/badge/Auth-Discord_OAuth2-5865F2?style=flat-square&logo=discord" />
 <img src="https://img.shields.io/badge/DB-SQLite-003B57?style=flat-square&logo=sqlite" />
 
+---
+
+### ☕ Support
+
+If you like this project, consider buying me a coffee!
+
+[![Buy Me a Coffee](https://img.shields.io/badge/Buy%20Me%20a%20Coffee-ffdd00?style=for-the-badge&logo=buy-me-a-coffee&logoColor=black)](https://buymeacoffee.com/kacperplaczek)
+
 </div>

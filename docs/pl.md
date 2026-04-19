@@ -39,15 +39,15 @@
 
 ## 🛠 Technologie
 
-| Technologia | Wersja | Zastosowanie |
-|---|---|---|
-| [Next.js](https://nextjs.org) | 15 | Framework fullstack |
-| [TypeScript](https://typescriptlang.org) | 5 | Typowanie |
-| [NextAuth.js](https://next-auth.js.org) | 5 | Autoryzacja Discord OAuth2 |
-| [Tailwind CSS](https://tailwindcss.com) | 4 | Stylowanie |
-| [SQLite](https://sqlite.org) | - | Baza danych whitelisty |
-| [Sonner](https://sonner.emilkowal.ski) | - | Powiadomienia toast |
-| [Lucide React](https://lucide.dev) | - | Ikony |
+| Technologia                              | Wersja | Zastosowanie               |
+| ---------------------------------------- | ------ | -------------------------- |
+| [Next.js](https://nextjs.org)            | 15     | Framework fullstack        |
+| [TypeScript](https://typescriptlang.org) | 5      | Typowanie                  |
+| [NextAuth.js](https://next-auth.js.org)  | 5      | Autoryzacja Discord OAuth2 |
+| [Tailwind CSS](https://tailwindcss.com)  | 4      | Stylowanie                 |
+| [SQLite](https://sqlite.org)             | -      | Baza danych whitelisty     |
+| [Sonner](https://sonner.emilkowal.ski)   | -      | Powiadomienia toast        |
+| [Lucide React](https://lucide.dev)       | -      | Ikony                      |
 
 ---
 
@@ -172,9 +172,11 @@ openssl rand -base64 32
 3. Przejdź do zakładki **OAuth2**
 4. Skopiuj **Client ID** i **Client Secret** do `.env.local`
 5. W sekcji **Redirects** dodaj:
+
    ```
    http://localhost:3000/api/auth/callback/discord
    ```
+
    > Na produkcji zamień na swoją domenę, np. `https://rose.owo/api/auth/callback/discord`
 
 6. Przejdź do zakładki **Bot** i skopiuj **Token** do `.env.local`
@@ -201,12 +203,20 @@ Aplikacja dostępna pod adresem: [http://localhost:3000](http://localhost:3000)
 
 Projekt używa wzorca **MVVM (Model-View-ViewModel)** połączonego z **feature-based structure**.
 
-| Plik | Odpowiedzialność |
-|---|---|
-| `model.ts` | Stałe, konfiguracja, wywołania API |
+| Plik           | Odpowiedzialność                              |
+| -------------- | --------------------------------------------- |
+| `model.ts`     | Stałe, konfiguracja, wywołania API            |
 | `viewmodel.ts` | Stan komponentu, logika, eventy (custom hook) |
-| `view.tsx` | Czysty UI, zero logiki biznesowej |
-| `types.d.ts` | Typy TypeScript dla danego feature |
-| `index.ts` | Publiczny eksport feature |
+| `view.tsx`     | Czysty UI, zero logiki biznesowej             |
+| `types.d.ts`   | Typy TypeScript dla danego feature            |
+| `index.ts`     | Publiczny eksport feature                     |
 
 > Małe komponenty (< ~30 linii, czysty UI) są trzymane jako pojedyncze pliki `.tsx` bez podziału na MVVM.
+
+---
+
+## ☕ Wesprzyj projekt
+
+Jeśli projekt Ci się podoba, możesz postawić mi kawę!
+
+[![Buy Me a Coffee](https://img.shields.io/badge/Buy%20Me%20a%20Coffee-ffdd00?style=for-the-badge&logo=buy-me-a-coffee&logoColor=black)](https://buymeacoffee.com/kacperplaczek)
