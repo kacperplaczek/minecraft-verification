@@ -4,8 +4,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { PetalsRain } from "@/components/PetalsRain";
 
-const SERVER_NAME = "rose.owo";
-const CONTACT_EMAIL = "kontakt@rose.owo"; // ← zmień na swój email
+const SERVER_NAME = "rose.owo - Serwer Discord dla Graczy";
+const CONTACT_EMAIL = "xk.placzek@gmail.com";
 const LAST_UPDATED = "19 kwietnia 2025";
 
 export default function PrivacyPolicy() {

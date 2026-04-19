@@ -27,33 +27,20 @@ export default function Index() {
   const debounce = useRef<number | null>(null);
   const { play } = useSounds(soundOn);
 
-  // Po zalogowaniu przez Discord — sprawdź członkostwo
+  
   useEffect(() => {
     if (status !== "authenticated") return;
-    setStep("checking-server");
     play("open");
-
-    fetch("/api/check-server")
-      .then((r) => r.json())
-      .then(({ isMember }) => {
-        if (isMember) {
-          play("level");
-          setStep("form");
-        } else {
-          play("error");
-          router.push("/without-dc");
-        }
-      })
-      .catch(() => {
-        play("error");
-        router.push("/without-dc");
-      });
+    setTimeout(() => {
+      play("level");
+      setStep("form");
+    }, 1600);
   }, [status]);
 
-  const handleLogin = async () => {
-    play("click");
-    await signIn("discord", { callbackUrl: "/" });
-  };
+    const handleLogin = async () => {
+      play("click");
+      await signIn("discord", { callbackUrl: "/" });
+    };
 
   // Debounced Mojang lookup
   useEffect(() => {
